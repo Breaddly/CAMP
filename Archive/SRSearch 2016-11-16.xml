@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+		<control id="txtCustState" searchText="Caller Province"></control>
+		<control id="txtProbState" searchText="Problem Province"></control>
+		<control id="txtCustZip" searchText="Caller Postal Code"></control>
+		<control id="txtProbZip" searchText="Problem Postal Code"></control>
+		<control id="Text1" visible="true"></control>
+		<control id="Num5" visible="false"></control>
+	</controls>
+  <layout>
+
+		<label id="label_txtProbState">
+			<text>Province:</text>
+		</label>
+		
+		<label id="label_txtCustState">
+			<text>Cust. Province:</text>
+		</label>
+		
+		<label id="label_txtProbZip">
+			<text>Postal Code:</text>
+		</label>
+		
+		<label id="label_txtCustZip">
+			<text>Cust. Postal Code:</text>
+		</label>
+
+	<column id="col1">  
+           <tabset id="tabset1" width="570"> 
+              	
+		<tab id="UniversalCustomFieldsTab" alternatingColor="true">
+          <tabTitle>
+            <text>Universal Custom Fields</text>
+          </tabTitle>
+          <row>
+		
+	    <label id="label_Text1">
+              <text>CitySourced Closed?:</text>
+              <linkedControls>
+                <control id="Text1" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text1" />
+              </linkedControls>
+            </controlContainer>
+            </row>
+	   </tab>
+	  </tabset>
+        </column>
+	</layout>
+</webLayout>

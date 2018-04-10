@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+		<control id="cmbCategory" searchText="JDE Type"></control>
+		<control id="cmbShop" searchText="Supplying Dept"></control>
+		<control id="cmbAcctNum" searchText="Supplying BU(s)"></control>
+		<control id="Text1" visible="true"></control>
+		<control id="Text2" visible="true"></control>
+                <control id="Text3" visible="true" searchText="GIS Update?"></control>
+		<control id="Text4" visible="true" searchText="ROW Coordinator Only"></control>
+		<control id="Text5" visible="true" searchText="Excavation?"></control>
+  </controls>
+  <layout>
+    
+		<!-- Add/Update Labels -->
+		<label id="label_cmbCategory">
+			<text>JDE Type:</text>
+		</label>
+		
+		<!-- Add/Update Rows -->
+		<tab id="GeneralTab">
+			<row moveTo="8">
+				<label id="label_cmbShop">
+					<text>Supplying Dept:</text>
+					<linkedControls>
+						<control id="cmbShop"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="cmbShop"/>
+					</linkedControls>
+				</controlContainer>
+				<label id="label_Text1">
+					<text>Receiving Dept:</text>
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+				</controlContainer>
+			</row>
+			<row moveTo="9">
+				<label id="label_cmbAcctNum">
+					<text>Supplying BU(s):</text>
+					<linkedControls>
+						<control id="cmbAcctNum"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="cmbAcctNum"/>
+					</linkedControls>
+				</controlContainer>
+				<label id="label_Text2">
+					<text>JDE Status:</text>
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+				</controlContainer>
+                         </row>
+			</tab>
+
+
+        <column id="col1">  
+           <tabset id="tabset1" width="570"> 
+              	
+		<tab id="UniversalCustomFieldsTab" alternatingColor="true">
+          <tabTitle>
+            <text>Universal Custom Fields</text>
+          </tabTitle>
+          <row>
+            <label id="label_Text3">
+              <text>GIS Update?:</text>
+              <linkedControls>
+                <control id="Text3" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text3" />
+              </linkedControls>
+            </controlContainer>
+            </row>
+	<row>
+            <label id="label_Text4">
+              <text>ROW Coord Only</text>
+              <linkedControls>
+                <control id="Text4" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text4" />
+              </linkedControls>
+            </controlContainer>
+            </row>
+	<row>
+            <label id="label_Text5">
+              <text>Excavation?</text>
+              <linkedControls>
+                <control id="Text5" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text5" />
+              </linkedControls>
+            </controlContainer>
+            </row>
+          </tab>
+    </tabset>
+     </column>     
+               
+	  </layout>
+</webLayout>

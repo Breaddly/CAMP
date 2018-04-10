@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pluginLayoutBase xmlns="http://www.azteca.com/cityworks/layout/pluginLayout">
+  <messages>
+    <!-- items for javascript map -->
+    <message id="ActionTitle">
+      <value>Actions</value>
+    </message>
+    <message id="VisibleTitle">
+      <value>Visible</value>
+    </message>
+    <message id="SelectableTitle">
+      <value>Selectable</value>
+    </message>
+    <message id="OpacitySliderTitle">
+      <value>Change layer opacity</value>
+    </message>
+    <message id="FullExtentTitle">
+      <value>Zoom to layer's extent</value>
+    </message>
+    <message id="ResetTitle">
+      <value>Reset to layer's default visibility settings.</value>
+    </message>
+    <message id="DefaultExpandLegendSymbols">
+      <value>false</value>
+    </message>
+    <message id="DefaultExpandGroupLayers">
+      <value>false</value>
+    </message>
+    <message id="DefaultExpandServiceLayers">
+      <value>false</value>
+    </message>
+  </messages>
+</pluginLayoutBase>

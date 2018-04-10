@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+		<control id="cmbCategory" searchText="JDE Type"></control>
+		<control id="cmbShop" searchText="Supplying Dept"></control>
+		<control id="cmbAcctNum" searchText="Supplying BU(s)"></control>
+		<control id="Text1" visible="true"></control>
+		<control id="Text2" visible="true"></control>
+                <control id="Text3" visible="true"></control>
+  </controls>
+  <layout>
+		
+		<!-- Add/Update Labels -->
+		<label id="label_cmbCategory">
+			<text>JDE Type:</text>
+		</label>
+		
+		<!-- Add/Update Rows -->
+		<tab id="GeneralTab">
+			<row moveTo="8">
+				<label id="label_cmbShop">
+					<text>Supplying Dept:</text>
+					<linkedControls>
+						<control id="cmbShop"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="cmbShop"/>
+					</linkedControls>
+				</controlContainer>
+				<label id="label_Text1">
+					<text>Receiving Dept:</text>
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+				</controlContainer>
+			</row>
+			<row moveTo="9">
+				<label id="label_cmbAcctNum">
+					<text>Supplying BU(s):</text>
+					<linkedControls>
+						<control id="cmbAcctNum"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="cmbAcctNum"/>
+					</linkedControls>
+				</controlContainer>
+				<label id="label_Text2">
+					<text>JDE Status:</text>
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+				</label>
+				<controlContainer type="long">
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+				</controlContainer>
+			</row>
+		</tab>
+		
+  </layout>
+</webLayout>

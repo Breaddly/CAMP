@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+
+    <control id="cboProbDistrict" visible="false"/>
+	<control id="cboCustDistrict" visible="false"/>
+	<control id="txtCustState" visible = "false"/>
+	<control id="txtProbState" visible = "false"/>
+	<control id="txtProbCity" visible = "false"/>
+	<control id="txtCustCity" visible = "false"/>
+	<control id="txtProbZip" visible = "false"/>
+	<control id="cboProbLandmark" visible = "false"/>
+	<control id="txtTileNo" visible = "false"/>
+	<control id="txtMapPage" visible="false"/>
+    <control id="cboShop" visible="false"/>
+	<control id="txtAcctNum" visible = "false"/>
+	<control id="txtFax" visible = "false"/>
+
+    <grid id="grdCustomers">
+      <columns>
+        <column id="AcctSid" visible="false">
+          <header>AcctSid</header>
+        </column>
+        <column id="AcctNum" visible="false">
+          <header>Account</header>
+        </column>
+        <column id="Title">
+          <header>Title</header>
+        </column>
+        <column id="FirstName">
+          <header>First Name</header>
+        </column>
+        <column id="MiddleInitial">
+          <header>M. I.</header>
+        </column>
+        <column id="LastName">
+          <header>Last Name</header>
+        </column>
+        <column id="CustAddress">
+          <header>Address</header>
+        </column>
+        <column id="AptNum">
+          <header>Apt.</header>
+        </column>
+        <column id="CustCity" visible="false">
+          <header>City</header>
+        </column>
+        <column id="CustState" visible="false">
+          <header>Province</header>
+        </column>
+        <column id="CustZip">
+          <header>Postal Code</header>
+        </column>
+        <column id="CustDistrict" visible="false">
+          <header>District</header>
+        </column>
+        <column id="Email">
+          <header>Email</header>
+        </column>
+        <column id="HomePhone">
+          <header>Home Phone</header>
+        </column>
+        <column id="WorkPhone">
+          <header>Work Phone</header>
+        </column>
+        <column id="OtherPhone">
+          <header>Other Phone</header>
+        </column>
+        <column id="CellPhone">
+          <header>Cell Phone</header>
+        </column>
+        <column id="Fax" visible = "false">
+          <header>Fax</header>
+        </column>
+        <column id="AcctType">
+          <header>Account Type</header>
+        </column>
+        <column id="Comments">
+          <header>Comments</header>
+        </column>
+      </columns>
+    </grid>
+  </controls>
+
+  <layout>
+     	<label id="label_txtCustZip"> 
+			<text>Postal Code:</text> 
+		</label>
+  </layout>
+ </webLayout>

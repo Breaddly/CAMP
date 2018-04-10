@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+		<grid id="grdCustomers">
+			<columns>
+				<column id="AcctSid" visible="false">
+					<header>AcctSid</header>
+				</column>
+				<column id="AcctNum">
+					<header>Account</header>
+				</column>
+				<column id="Title">
+					<header>Title</header>
+				</column>
+				<column id="FirstName">
+					<header>First Name</header>
+				</column>
+				<column id="MiddleInitial">
+					<header>M. I.</header>
+				</column>
+				<column id="LastName">
+					<header>Last Name</header>
+				</column>
+				<column id="CustAddress">
+					<header>Address</header>
+				</column>
+				<column id="AptNum">
+					<header>Apt.</header>
+				</column>
+				<column id="CustCity">
+					<header>City</header>
+				</column>
+				<column id="CustState">
+					<header>Province</header>
+				</column>
+				<column id="CustZip">
+					<header>Postal Code</header>
+				</column>
+				<column id="CustDistrict">
+					<header>District</header>
+				</column>
+				<column id="Email">
+					<header>Email</header>
+				</column>
+				<column id="HomePhone">
+					<header>Home Phone</header>
+				</column>
+				<column id="WorkPhone">
+					<header>Work Phone</header>
+				</column>
+				<column id="OtherPhone">
+					<header>Other Phone</header>
+				</column>
+				<column id="CellPhone">
+					<header>Cell Phone</header>
+				</column>
+				<column id="Fax">
+					<header>Fax</header>
+				</column>
+				<column id="AcctType">
+					<header>Account Type</header>
+				</column>
+				<column id="Comments">
+					<header>Comments</header>
+				</column>
+			</columns>
+		</grid>
+		<grid id="grdCallHistory" >
+			<columns>
+				<column id="RequestId">
+					<header>Request Id</header>
+				</column>
+				<column id="IncidentNum" visible="false">
+					<header>Incident Num</header>
+				</column>
+				<column id="DateTimeCall">
+					<header>Call Time</header>
+				</column>
+				<column id="ProbDetails">
+					<header>Details</header>
+				</column>
+				<column id="FirstName" visible="false">
+					<header>First</header>
+				</column>
+				<column id="MiddleInitial" visible="false">
+					<header>M.I.</header>
+				</column>
+				<column id="LastName" visible="false">
+					<header>Last</header>
+				</column>
+				<column id="Title" visible="false">
+					<header>Title</header>
+				</column>
+				<column id="AcctNum" visible="false">
+					<header>Account</header>
+				</column>
+				<column id="AptNum" visible="false">
+					<header>Apt</header>
+				</column>
+				<column id="CustAddress" visible="false">
+					<header>Cust Address</header>
+				</column>
+				<column id="CustCity" visible="false">
+					<header>Cust City</header>
+				</column>
+				<column id="CustState" visible="false">
+					<header>Cust Province</header>
+				</column>
+				<column id="CustZip" visible="false">
+					<header>Cust Postal Code</header>
+				</column>
+				<column id="CustDistrict" visible="false">
+					<header>Cust District</header>
+				</column>
+				<column id="CustAddType" visible="false">
+					<header>Cust Add Type</header>
+				</column>
+				<column id="HomePhone" visible="false">
+					<header>Home Phone</header>
+				</column>
+				<column id="WorkPhone" visible="false">
+					<header>Work Phone</header>
+				</column>
+				<column id="OtherPhone" visible="false">
+					<header>Other Phone</header>
+				</column>
+				<column id="CellPhone" visible="false">
+					<header>Cell Phone</header>
+				</column>
+				<column id="Fax" visible="false">
+					<header>Fax</header>
+				</column>
+				<column id="Email" visible="false">
+					<header>Email</header>
+				</column>
+				<column id="CCX" visible="false">
+					<header>X</header>
+				</column>
+				<column id="CCY" visible="false">
+					<header>Y</header>
+				</column>
+				<column id="IsResident">
+					<header>Is Resident</header>
+				</column>
+				<column id="IsFollowUpCall">
+					<header>Is Follow up</header>
+				</column>
+				<column id="CallerType" visible="false">
+					<header>Caller Type</header>
+				</column>
+				<column id="Comments" visible="false">
+					<header>Comments</header>
+				</column>
+				<column id="CustContact">
+					<header>Cust Contact</header>
+				</column>
+				<column id="DateTimeContact">
+					<header>Contact Time</header>
+				</column>
+				<column id="CustCallback">
+					<header>Cust Callback</header>
+				</column>
+				<column id="DateTimeCallback">
+					<header>Callback Time</header>
+				</column>
+				<column id="Text1" visible="false">
+					<header>Text 1</header>
+				</column>
+				<column id="Text2" visible="false">
+					<header>Text 2</header>
+				</column>
+				<column id="Text3" visible="false">
+					<header>Text 3</header>
+				</column>
+				<column id="Text4" visible="false">
+					<header>Text 4</header>
+				</column>
+				<column id="Text5" visible="false">
+					<header>Text 5</header>
+				</column>
+			</columns>
+		</grid>
+	</controls>
+  <layout>
+
+		<label id="label_txtCustState">
+			<text>Province:</text>
+		</label>
+
+		<label id="label_txtCustZip">
+			<text>Postal Code:</text>
+		</label>
+		
+	</layout>
+</webLayout>

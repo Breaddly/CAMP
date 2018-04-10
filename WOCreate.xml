@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayoutBase version="1" id="WOCreate" xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+    <control id="cboAssetGroup"></control>
+    <control id="cboWOCategoryDesc"></control>
+    <grid id="grdSelectedEntities">
+      <columns>
+        <column id="EntityType">
+          <header>Entity Type</header>
+        </column>
+        <column id="EntityUid">
+          <header>Entity Uid</header>
+        </column>
+        <column id="EntitySid" visible="false">
+          <header>Entity Sid</header>
+        </column>
+        <column id="LegacyId">
+          <header>Legacy Id</header>
+        </column>
+        <column id="Location">
+          <header>Location</header>
+        </column>
+        <column id="FeatureType">
+          <header>Feature Type</header>
+        </column>
+        <column id="FeatureUid">
+          <header>Feature Uid</header>
+        </column>
+        <column id="FeatureId" visible="false">
+          <header>Feature Sid</header>
+        </column>
+        <column id="X" visible="false">
+          <header>X</header>
+        </column>
+        <column id="Y" visible="false">
+          <header>Y</header>
+        </column>
+      </columns>
+    </grid>
+    <grid id="grdOpenWorkActivities">
+      <columns>
+        <column id="EntityUid">
+          <header>Entity Uid</header>
+        </column>
+        <column id="EntityType">
+          <header>Entity Type</header>
+        </column>
+        <column id="Id">
+          <header>Id</header>
+        </column>
+        <column id="Kind">
+          <header>Kind</header>
+        </column>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="Status">
+          <header>Status</header>
+        </column>
+        <column id="Created" visible="false">
+          <header>Date Created</header>
+        </column>
+        <column id="Closed" visible="false">
+          <header>Date Closed</header>
+        </column>
+      </columns>
+    </grid>
+    <control id="lstApplyToEntity" />
+    <control id="lstDescription" />
+    <control id="optListWOCount" />
+    <control id="rdoFeature" />
+    <control id="rdoObject" />
+    <control id="rdoOther" />
+    <control id="cboStatus" />
+    <control id="cboPriority" />
+    <control id="cboRequestedBy" />
+    <control id="cboSupervisor" />
+    <control id="cboSubmitTo" />
+    <control id="calProjStartDate" />
+    <control id="cboStage" />
+    <control id="cboExpenseType" />
+    <control id="txtComments" />
+    <control id="txtInstructions" />
+   <!-- <zone id="zoneWOCreate" name="zoneWOCreate"></zone>  -->
+  </controls>
+
+  <layout>
+    <zone id="zoneWOCreate">
+      <column id="col1">
+        <panel id="General" width="482px">
+          <panelTitle>
+            <text>Select Template</text>
+          </panelTitle>
+          <row>
+            <label id="label_cboAssetGroup">
+              <text>Entity Group:</text>
+              <linkedControls>
+                <control id="cboAssetGroup"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboAssetGroup"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboWOCategoryDesc">
+              <text>Category:</text>
+              <linkedControls>
+                <control id="cboWOCategoryDesc"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboWOCategoryDesc"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer textAlign="right" style="min-width:35px">
+              <linkedControls>
+                <control id="rdoFeature" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_rdoFeature" textAlign="left" type="short" style="width:55px">
+              <text>Feature</text>
+              <linkedControls>
+                <control id="rdoFeature" />
+              </linkedControls>
+            </label>
+            <controlContainer type="veryshort" >
+              <linkedControls>
+                <control id="rdoObject" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_rdoObject" textAlign="left" type="short" style="width:55px">
+              <text>Object</text>
+              <linkedControls>
+                <control id="rdoObject" />
+              </linkedControls>
+            </label>
+            <controlContainer type="veryshort" >
+              <linkedControls>
+                <control id="rdoOther" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_rdoOther" textAlign="left" type="short" style="width:55px">
+              <text>Other</text>
+              <linkedControls>
+                <control id="rdoOther" />
+              </linkedControls>
+            </label>
+          </row>
+          <row>
+            <controlContainer>
+              <linkedControls>
+                <control id="lstApplyToEntity"/>
+              </linkedControls>
+            </controlContainer>
+            <controlContainer>
+              <linkedControls>
+                <control id="lstDescription"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>        
+      </column>
+      <column id="col2">
+        <panel id="FieldPanel" width="482px">
+          <panelTitle>
+            <text>General</text>
+          </panelTitle>
+          <row>
+            <label id="label_cboStatus">
+              <text>Status:</text>
+              <linkedControls>
+                <control id="cboStatus" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboStatus" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboPriority">
+              <text>Priority:</text>
+              <linkedControls>
+                <control id="cboPriority" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboPriority" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboRequestedBy">
+              <text>Requested By:</text>
+              <linkedControls>
+                <control id="cboRequestedBy" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboRequestedBy" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboSupervisor">
+              <text>Supervisor:</text>
+              <linkedControls>
+                <control id="cboSupervisor" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboSupervisor" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboSubmitTo">
+              <text>Submit To:</text>
+              <linkedControls>
+                <control id="cboSubmitTo" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboSubmitTo" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_calProjStartDate">
+              <text>Projected Start:</text>
+              <linkedControls>
+                <control id="calProjStartDate" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calProjStartDate" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboStage">
+              <text>Stage:</text>
+              <linkedControls>
+                <control id="cboStage" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboStage" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboExpenseType">
+              <text>Expense Type:</text>
+              <linkedControls>
+                <control id="cboExpenseType" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboExpenseType" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtComments">
+              <text>Comments:</text>
+              <linkedControls>
+                <control id="txtComments" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtComments" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtInstructions">
+              <text>Instructions:</text>
+              <linkedControls>
+                <control id="txtInstructions" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtInstructions" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+      </column>
+      <column id="col3">
+        <panel id="SelectedEntitiesPanel" width="482px">
+          <panelTitle>
+            <text>Selected Assets</text>
+          </panelTitle>
+          <row style="margin-top:6px; margin-bottom:6px;">
+            <label id="label_CreateWorkOrderFor" type="long">
+              <text>Create a work order for:</text>
+              <linkedControls>
+                <control id="optListWOCount" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="optListWOCount" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <horizontalRule id="rule">
+            <linkedControls>
+              <control id="grdSelectedEntities"/>
+            </linkedControls>
+          </horizontalRule>
+          <row>
+            <controlContainer cssClass="noSpace">
+              <linkedControls>
+                <control id="grdSelectedEntities"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+      </column>
+
+
+      <column id="col4">
+        <panel id="OpenWorkActivitiesPanel" width="482px">
+          <panelTitle>
+            <text>Open Work Activities</text>
+          </panelTitle>
+                  <row>
+            <controlContainer cssClass="noSpace">
+              <linkedControls>
+                <control id="grdOpenWorkActivities"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+      </column>
+    </zone>
+  </layout>
+  
+  <messages>
+    <message id="ErrorWO">
+      <value>Error creating work orders.</value>
+    </message>
+    <message id="ErrorFromSR">
+      <value>Error creating work order from service request.</value>
+    </message>
+    <message id="ErrorFromIN">
+      <value>Error creating work order from inspection.</value>
+    </message>
+    <message id="ErrorFromPermit">
+      <value>Error creating work order from permit.</value>
+    </message>
+    <message id="ErrorChildWO">
+      <value>Error creating child work order.</value>
+    </message>
+    <message id="btnCreateWO">
+      <value>Create</value>
+    </message>
+    <message id="btnCreateWOToolTip">
+      <value>Create new Work Order(s)</value>
+    </message>
+    <message id="btnOK">
+      <value>Create</value>
+    </message>
+    <message id="btnOKToolTip">
+      <value>Create new Work Order(s)</value>
+    </message>
+    <message id="btnGetFromMap">
+      <value>Reload Entities</value>
+    </message>
+    <message id="btnGetFromMapToolTip">
+      <value>Reload selected entities from the map</value>
+    </message>
+    <message id="btnClear">
+      <value>Clear</value>
+    </message>
+    <message id="btnClearToolTip">
+      <value>Clear selected entities</value>
+    </message>
+    <message id="OneForAll">
+      <value>ALL selected entities</value>
+    </message>
+    <message id="OneForEach">
+      <value>EACH selected entity</value>
+    </message>
+    <message id="CompleteRequiredFields" inClientLibrary="true">
+      <value>Please complete required fields</value>
+    </message>
+    <message id="WorkActivityIdColumn">
+      <value>Id</value>
+    </message>
+    <message id="Processing" inClientLibrary="true">
+      <value>Processing...</value>
+    </message>
+
+  </messages>
+</webLayoutBase>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pluginLayout xmlns="http://www.azteca.com/cityworks/layout/pluginLayout">
+  <messages>
+    <message id="Title">
+      <value>Google Street Viewer</value>
+    </message>
+
+    <message id="Icon">
+      <value>custom/img/GoogleStreetView.png</value>
+    </message>
+
+    <message id="Button">
+      <value>Activate and click on Map</value>
+    </message>
+
+    <message id="Loading">
+      <value>Loading...</value>
+    </message>
+
+    <message id="webMercatorToGeographic">
+      <value>true</value>
+    </message>
+
+    <message id="layoutRegion">
+      <value>leading</value>
+    </message>    
+
+    <message id="StreetViewer">
+      <value>http://cc-gretzky/StreetViewer/StreetViewer.html</value>
+    </message>    
+    
+  </messages>
+</pluginLayout>

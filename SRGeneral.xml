@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout  xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+		<control id="txtProbState" visible="false"></control>
+		<control id="chkExcursion" visible="false"></control>
+		<control id="chkWoNeeded" visible="false"></control>
+		<control id="cboProjectName" visible="false"></control>
+		<control id="calPrjCompleteDate" visible="false"></control>
+		<control id="ProjectNameTree" visible="false"></control>
+		<control id="cboProbLandmark" visible="false"></control>
+		<control id="cboProbAddType" visible="false"></control>
+		<control id="cboShop" visible="false"></control>
+		<control id="txtTileNo" visible="false"></control>
+		<control id="txtMapPage" visible="false"></control>
+		<control id="cboProbDistrict" visible="false"></control>
+		<control id="Text1" visible="true"></control>
+		<control id="Text2" visible="true"></control>
+	</controls>
+  <layout>
+
+		<!-- Add/Update Labels -->
+		<label id="label_txtProbState">
+			<text>Province:</text>
+		</label>
+                <label id="label_txtProbZip">
+			<text>Postal Code:</text>
+		</label>
+		<!-- Hide/Move Panels and Titles -->
+		<panel id="Cases" visible="false" />
+
+		<label id="label_Text1">
+					<text>CitySourced Closed?:</text>
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+		                </label>
+
+	<label id="label_Text2">
+					<text>SR Escalated?:</text>
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+		                </label>
+		
+	</layout>
+</webLayout>

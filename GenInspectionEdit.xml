@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+    
+
+	<control id="Text1" visible="true"></control>
+   </controls>   
+  <layout>
+    
+
+	<label id="label_Text1">
+<text>Inspection Printed?</text>
+
+
+</label>
+
+  
+
+  </layout>
+  <messages>
+  </messages>
+</webLayout>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<webLayoutBase version="1" id="WOCostSummaryLayout" xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+    <grid id="grdEquip_Act">
+      <columns>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="HoursRequired">
+          <header>Hours</header>
+        </column>
+        <column id="UnitsRequired">
+          <header>Units</header>
+        </column>
+        <column id="RateType">
+          <header>Rate Type</header>
+        </column>
+        <column id="Cost" format="C2">
+          <header>Cost</header>
+        </column>
+		<column id="StartDate">
+          <header>Start Date</header>
+        </column>
+        <column id="FinishDate">
+          <header>Finish Date</header>
+        </column>
+        <column id="Source">
+          <header>Source</header>
+        </column>
+        <column id="EntityUid">
+          <header>Entity Id</header>
+        </column>
+        <column id="EntityType">
+          <header>Entity Type</header>
+        </column>
+      </columns>
+    </grid>
+    
+    
+     <grid id="grdMat_Act">
+      <columns>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="UnitsRequired">
+          <header>Units</header>
+        </column>
+        <column id="Cost" format="C2">
+          <header>Cost</header>
+        </column>
+        <column id="Source">
+          <header>Source</header>
+        </column>
+        <column id="StockModified">
+          <header>Stock Updated</header>
+        </column>
+        <column id="EntityUid">
+          <header>Entity Id</header>
+        </column>
+        <column id="EntityType">
+          <header>Entity Type</header>
+        </column>
+		<column id="TransDate">
+          <header>Date Time</header>
+        </column>
+        
+      </columns>
+	  
+    </grid>
+    
+   
+  </controls>
+  
+  
+</webLayoutBase>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+    <!-- You don't need to make the Date1 control visible to populate it. You can populate and save it even if it is not visible. -->
+    <control id="Date1" visible="true" />
+          </controls>
+  <layout>
+    <label id="CustomCode" moveAfter="col1" type="plain">
+      <text>
+        <![CDATA[
+          <script>
+		    //Function that runs on Inspection page load
+            $(function() {
+			  //Grab system date, set as variable "todaysDate"
+              var todaysDate = new Date();
+			  //Grab Date1 custom field, set as variable "date1"
+              var date1 = igedit_getById("ctl00_Main_Date1_datInpt");
+			  //Populate date1 with todaysDate
+              date1.setDate(todaysDate);
+            });
+          </script>
+        ]]>
+      </text>
+    </label>
+	<label id="label_Date1">
+<text>Print Date:</text>
+<linkedControls>
+<control id="Date1"/>
+</linkedControls>
+
+
+
+</label>
+
+    
+
+  </layout>
+  <messages>
+  </messages>
+</webLayout>

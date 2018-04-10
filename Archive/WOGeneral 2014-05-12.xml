@@ -1,0 +1,1728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayoutBase version="1" id="WOGeneral" xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+  <controls>
+    <button id="btnAddAsset" toolTip="Add asset(s) by searching type and id." iconSource="../Assets/icons/asset-search-16.png" />
+    <button id="btnCreateInsp" toolTip="Create an inspection on selected asset(s)." iconSource="../Assets/icons/inspection-18.png" />
+    <button id="btnEditAssets" toolTip="Edit attributes for selected asset(s)." iconSource="../Assets/icons/edit-16.png" />
+    <button id="btnGetFromMap" toolTip="Add asset(s) currently selected on the map." iconSource="../Assets/icons/getFromMap-16.png" />
+    <button id="btnHighlight" toolTip="Highlight selected asset(s) on the map." iconSource="../Assets/icons/zoomSelected-16.png" />
+    <button id="btnListEntityHistory" toolTip="View work history of selected asset(s)." iconSource="../Assets/icons/barricade-16.png" />
+    <button id="btnRemoveAssets" toolTip="Remove selected asset(s)." iconSource="../Assets/icons/delete-18.png" />
+    <button id="btnAssetCosts" toolTip="View costs of selected asset(s)." iconSource="../Assets/icons/money-16.png" />
+    <button id="btnCreateChangeOut" toolTip="Create a change out." iconSource="../Assets/icons/equip-changeout-16.png" />
+    <button id="btnCreateCase" toolTip="Create permit case." >
+      <text>Create</text>
+    </button>
+    <button id="btnCreateChildWO" toolTip="Create a child work order of the selected description from this work order.">
+      <text>Create</text>
+    </button>
+    <button id="btnRemoveInsp" toolTip="Remove inspection.">
+      <text>Remove</text>
+    </button>
+    <button id="btnRemoveRequest" toolTip="Remove request.">
+      <text>Remove</text>
+    </button>
+    <button id="btnShowPredefinedComments" toolTip="Select predefined comments">
+      <text>Select</text>
+    </button>
+    <button id="btnChangeEntityType" toolTip="Change the entity type.">
+      <text>Change</text>
+    </button>
+    <control id="calActualFinishDate" required="true"></control>
+    <control id="calActualStartDate"></control>
+    <control id="calFromDate"></control>
+    <control id="calProjFinishDate" visible="false"/>
+    <control id="calProjStartDate" visible="false"/>
+    <control id="cboCategory"></control>
+    <control id="cboCaseTypes"></control>
+    <control id="cboChildWODesc"></control>
+    <control id="cboContractorName"></control>
+    <control id="cboCycleFrom"></control>
+    <control id="cboCycleIntervalUnit"></control>
+    <control id="cboCycleType"></control>
+    <control id="cboDistrict"></control>
+    <control id="cboExpenseType"></control>
+    <control id="cboPrimaryContract"></control>
+    <control id="cboPriority"></control>
+    <control id="cboProjectName"></control>
+    <control id="ProjectNameTree"></control>
+    <control id="cboRequestedBy"></control>
+    <control id="cboResolution"></control>
+    <control id="cboShop"></control>
+    <control id="cboStage" visible="false"/>
+    <control id="cboStatus"></control>
+    <control id="cboSubmitTo"></control>
+    <control id="cboSupervisor"></control>
+    <control id="cboUnitsAccompDesc"></control>
+    <control id="cboWODesc"></control>
+    <control id="cboWorkCompletedBy"></control>
+    <control id="cboWorkOrderId"></control>
+    <control id="chkApplyToAll"></control>
+    <control id="chkCancel"></control>
+    <control id="chkContrBillable"></control>
+    <control id="chkLegalBillable"></control>
+    <control id="chkUnitsAccompDescLock"></control>
+    <control id="chkIsReactive"></control>    
+    <control id="chkUpdateMap"></control>
+    <control id="grdAttachments"></control>
+    <grid id="grdCases">
+      <columns>
+        <column id="CaObjectId">
+          <header>Id</header>
+        </column>
+        <column id="CaseNumber">
+          <header>Number</header>
+        </column>
+        <column id="CaseType">
+          <header>Type</header>
+        </column>
+        <column id="CaseTypeDesc">
+          <header>Description</header>
+        </column>
+        <column id="CaseStatus">
+          <header>Status</header>
+        </column>
+        <column id="DateCreated">
+          <header>Created</header>
+        </column>
+        <column id="SubType">
+          <header>Sub Type</header>
+        </column>
+      </columns>
+    </grid>
+    <grid id="grdChildWorkOrders">
+      <columns>
+        <column id="WorkOrderId">
+          <header>Id</header>
+        </column>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="Priority">
+          <header>Priority</header>
+        </column>
+        <column id="Status">
+          <header>Status</header>
+        </column>
+        <column id="SubmitTo">
+          <header>Submit To</header>
+        </column>
+        <column id="ProjStartDate" format="d">
+          <header>Proj Start Date</header>
+        </column>
+        <column id="ProjFinishDate" format="d">
+          <header>Proj Finish Date</header>
+        </column>
+        <column id="ActualStartDate" format="d">
+          <header>Actual Start</header>
+        </column>
+        <column id="ActualFinishDate" format="d">
+          <header>Actual Finish</header>
+        </column>
+      </columns>
+    </grid>
+    <grid id="grdContractLineItems">
+      <columns>
+        <column id="ContractNumber">
+          <header>Contract Number</header>
+        </column>
+        <column id="AssetType">
+          <header>Asset Type</header>
+        </column>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="UnitsUsed">
+          <header>Units Used</header>
+        </column>
+        <column id="Cost" format="c">
+          <header>Total Cost</header>
+        </column>
+      </columns>
+    </grid>
+    <grid id="grdInspections">
+      <columns>
+        <column id="InspectionId">
+          <header>Id</header>
+        </column>
+        <column id="InspCode">
+          <header>Type</header>
+        </column>
+        <column id="InspDesc">
+          <header>Description</header>
+        </column>
+        <column id="EntityUid">
+          <header>Entity Id</header>
+        </column>
+        <column id="EntityType">
+          <header>Entity Type</header>
+        </column>
+        <column id="InspDate" format="d">
+          <header>Date</header>
+        </column>
+        <column id="InspectedBy">
+          <header>Inspected By</header>
+        </column>
+        <column id="Location">
+          <header>Location</header>
+        </column>
+        <column id="UpdateMap">
+          <header>Update Map</header>
+        </column>
+        <column id="Comments">
+          <header>Comments</header>
+        </column>
+
+      </columns>
+    </grid>
+    <grid id="grdRequests">
+      <columns>
+        <column id="RequestId">
+          <header>Id</header>
+        </column>
+        <column id="DateTimeInit" format="d">
+          <header>Date Initiated</header>
+        </column>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="Priority">
+          <header>Priority</header>
+        </column>
+        <column id="ReqCategory">
+          <header>Category</header>
+        </column>
+        <column id="SubmitTo">
+          <header>Submit To</header>
+        </column>
+        <column id="DispatchTo">
+          <header>Dispatch To</header>
+        </column>
+        <column id="ProbAddress">
+          <header>Address</header>
+        </column>
+        <column id="ProbDistrict">
+          <header>District</header>
+        </column>
+        <column id="DateTimeClosed" format="d">
+          <header>Date Time Closed</header>
+        </column>
+        <column id="Status">
+          <header>Status</header>
+        </column>
+      </columns>
+    </grid>
+    <grid id="grdWoEntity">
+      <columns></columns>
+    </grid>
+    <grid id="grdWOTask">
+      <columns>
+        <column id="WOTaskId" visible="false">
+          <header>ID</header>
+        </column>
+        <column id="TaskSid" visible="false">
+          <header>TaskSid</header>
+        </column>
+        <column id="TaskSeqId">
+          <header>SeqID</header>
+        </column>
+        <column id="TaskName">
+          <header>Name</header>
+        </column>
+        <column id="Description">
+          <header>Description</header>
+        </column>
+        <column id="Status">
+          <header>Status</header>
+        </column>
+        <column id="ProceedOk">
+          <header>Proceed</header>
+        </column>
+        <column id="IsRework">
+          <header>Rework</header>
+        </column>
+        <column id="AssignedToName">
+          <header>Assigned To</header>
+        </column>
+        <column id="AssignedToSID" visible="false">
+          <header>AssignedToSID</header>
+        </column>
+        <column id="Shop">
+          <header>Shop</header>
+        </column>
+        <column id="ActStartDate" format="g">
+          <header>Start Date</header>
+        </column>
+        <column id="ActFinishDate" format="g">
+          <header>Finish Date</header>
+        </column>
+        <column id="ProjStartDate" format="g">
+          <header>Proj. Start</header>
+        </column>
+        <column id="ProjFinishDate" format="g">
+          <header>Proj. Finish</header>
+        </column>
+        <column id="EntityType">
+          <header>Asset</header>
+        </column>
+        <column id="EntityUid">
+          <header>AssetID</header>
+        </column>
+        <column id="PermitNum">
+          <header>Permit</header>
+        </column>
+        <column id="TaskCode">
+          <header>Response</header>
+        </column>
+        <column id="Comments">
+          <header>Comments</header>
+        </column>
+        <column id="Duration">
+          <header>Duration</header>
+        </column>
+      </columns>
+    </grid>
+    <control id="lblWOCost"></control>
+    <control id="lblWOEquipCost"></control>
+    <control id="lblWOLaborCost"></control>
+    <control id="lblWOMatCost"></control>
+    <control id="lblWOPermitCost"></control>
+    <control id="plcLegend"></control>
+    <control id="txtAcctNum"></control>
+    <control id="txtApplyToEntity"></control>
+    <control id="txtCancelledBy"></control>
+    <control id="txtCancelReason"></control>
+    <control id="txtCycleIntervalNum"></control>
+    <control id="calDateCancelled"></control>
+    <control id="txtDatePrinted"></control>
+    <control id="calDateSubmitTo"></control>
+    <control id="txtDateSubmitToOpen"></control>
+    <control id="txtDateToBePrinted"></control>
+    <control id="txtDateWOClosed"></control>
+    <control id="calInitiateDate"></control>
+    <control id="txtInitiatedBy"></control>
+    <control id="txtInspectionId"></control>
+    <control id="txtInstructions"></control>
+    <control id="txtLocation"></control>
+    <control id="txtMapPage"></control>
+    <control id="txtNewComments"></control>
+    <control id="txtOldComments"></control>
+    <control id="txtRequestId"></control>
+    <control id="txtSourceWOId"></control>
+    <control id="txtStreetName"></control>
+    <control id="txtSubmitToOpenBy"></control>
+    <control id="txtTileNo"></control>
+    <control id="txtUnitsAccompDesc"></control>
+    <control id="txtUnitsAccomplished"></control>
+    <control id="txtWOAddress"></control>
+    <control id="txtWOClosedBy"></control>
+    <control id="txtWOXCoordinate"></control>
+    <control id="txtWOYCoordinate"></control>
+    <control id="Date1" visible="false"></control>
+    <control id="Date2" visible="false"></control>
+    <control id="Date3" visible="false"></control>
+    <control id="Date4" visible="false"></control>
+    <control id="Date5" visible="false"></control>
+    <control id="Num1" visible="false"></control>
+    <control id="Num2" visible="false"></control>
+    <control id="Num3" visible="false"></control>
+    <control id="Num4" visible="false"></control>
+    <control id="Num5" visible="false"></control>
+    <control id="Text1" visible="false"></control>
+    <control id="Text2" visible="false"></control>
+    <control id="Text3" visible="false"></control>
+    <control id="Text4" visible="false"></control>
+    <control id="Text5" visible="false"></control>
+    <control id="Text6" visible="false"></control>
+    <control id="Text7" visible="false"></control>
+    <control id="Text8" visible="false"></control>
+    <control id="Text9" visible="false"></control>
+    <control id="Text10" visible="false"></control>
+    <zone id="zoneWOGeneral" name="zoneWOGeneral"></zone>
+  </controls>
+  <help/>
+  <layout>
+    <zone id="zoneWOGeneral">
+      <column id="col1">
+        <panel id="General" width="482px">
+          <panelTitle>
+            <text>Work Order</text>
+          </panelTitle>
+          <row>
+            <label id="label_cboWODesc">
+              <text>Description:</text>
+              <linkedControls>
+                <control id="cboWODesc"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboWODesc"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboWorkOrderId">
+              <text>WO Number:</text>
+              <linkedControls>
+                <control id="cboWorkOrderId"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboWorkOrderId"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_chkApplyToAll" >
+              <text>Apply To All:</text>
+              <linkedControls>
+                <control id="chkApplyToAll" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="chkApplyToAll" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtApplyToEntity">
+              <text>Entity Type:</text>
+              <linkedControls>
+                <control id="txtApplyToEntity"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtApplyToEntity"/>
+              </linkedControls>
+            </controlContainer>
+            <controlContainer>
+              <linkedControls>
+                <control id="btnChangeEntityType"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboCategory">
+              <text>Category:</text>
+              <linkedControls>
+                <control id="cboCategory"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboCategory"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtInitiatedBy">
+              <text>Initiated By:</text>
+              <linkedControls>
+                <control id="txtInitiatedBy"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtInitiatedBy"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_calInitiateDate">
+              <text>Date:</text>
+              <linkedControls>
+                <control id="calInitiateDate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calInitiateDate"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboStatus">
+              <text>Status:</text>
+              <linkedControls>
+                <control id="cboStatus"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboStatus"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboPriority">
+              <text>Priority:</text>
+              <linkedControls>
+                <control id="cboPriority"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboPriority"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboRequestedBy">
+              <text>Requested By:</text>
+              <linkedControls>
+                <control id="cboRequestedBy"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboRequestedBy"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboSupervisor">
+              <text>Supervisor:</text>
+              <linkedControls>
+                <control id="cboSupervisor"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboSupervisor"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboSubmitTo">
+              <text>Submit To:</text>
+              <linkedControls>
+                <control id="cboSubmitTo"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboSubmitTo"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_calDateSubmitTo">
+              <text>Date:</text>
+              <linkedControls>
+                <control id="calDateSubmitTo"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calDateSubmitTo"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_calProjStartDate">
+              <text>Projected Start:</text>
+              <linkedControls>
+                <control id="calProjStartDate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calProjStartDate"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_calProjFinishDate">
+              <text>Projected Finish:</text>
+              <linkedControls>
+                <control id="calProjFinishDate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calProjFinishDate"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+            <label id="label_txtSubmitToOpenBy" visible="false">
+              <text>Opened By:</text> 
+              <linkedControls>
+                <control id="txtSubmitToOpenBy"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtSubmitToOpenBy"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtDateSubmitToOpen" visible="false">
+              <text>Date:</text>
+              <linkedControls>
+                <control id="txtDateSubmitToOpen"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtDateSubmitToOpen"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtWOClosedBy">
+              <text>Closed By:</text>
+              <linkedControls>
+                <control id="txtWOClosedBy"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtWOClosedBy"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtDateWOClosed">
+              <text>Date:</text>
+              <linkedControls>
+                <control id="txtDateWOClosed"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtDateWOClosed"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboWorkCompletedBy">
+              <text>Completed By:</text>
+              <linkedControls>
+                <control id="cboWorkCompletedBy"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboWorkCompletedBy"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_calActualStartDate">
+              <text>Actual Start:</text>
+              <linkedControls>
+                <control id="calActualStartDate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calActualStartDate"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_calActualFinishDate">
+              <text>Actual Finish:</text>
+              <linkedControls>
+                <control id="calActualFinishDate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calActualFinishDate"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboStage" visible="false">
+              <text>Stage: </text>
+              <linkedControls>
+                <control id="cboStage"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboStage"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboExpenseType">
+              <text>Expense Type: </text>
+              <linkedControls>
+                <control id="cboExpenseType"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboExpenseType"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtNewComments">
+              <text>Add Comments:</text>
+              <linkedControls>
+                <control id="txtNewComments"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtNewComments"/>
+              </linkedControls>
+            </controlContainer>
+            <space>
+              <linkedControls>
+                <control id="btnShowPredefinedComments"/>
+              </linkedControls>
+            </space>
+            <controlContainer>
+              <linkedControls>
+                <control id="btnShowPredefinedComments"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtOldComments">
+              <text>Existing Comments:</text>
+              <linkedControls>
+                <control id="txtOldComments"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtOldComments"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtInstructions">
+              <text>Instructions:</text>
+              <linkedControls>
+                <control id="txtInstructions"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtInstructions"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboResolution">
+              <text>Resolution</text>
+              <linkedControls>
+                <control id="cboResolution"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboResolution"/>
+              </linkedControls>
+            </controlContainer>
+            
+            <label id="label_chkIsReactive">
+              <text>Reactive?</text>
+              <linkedControls>
+                <control id="chkIsReactive"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="chkIsReactive"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="Details" width="482px">
+          <panelTitle>
+            <text>Details</text>
+          </panelTitle>
+          <row visible="false">
+            <label id="label_cboProjectName">
+              <text>Project:</text>
+              <linkedControls>
+                <control id="cboProjectName"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboProjectName"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtAcctNum">
+              <text>Account:</text>
+              <linkedControls>
+                <control id="txtAcctNum"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtAcctNum"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+            <controlContainer style="width:99%;">
+              <linkedControls>
+                <control id="ProjectNameTree" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+            <label id="label_cboPrimaryContract">
+              <text>Contract: </text>
+              <linkedControls>
+                <control id="cboPrimaryContract"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboPrimaryContract"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboContractorName">
+              <text>Contractor: </text>
+              <linkedControls>
+                <control id="cboContractorName"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboContractorName"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+              <label id="label_chkLegalBillable">
+                  <text>Legal Billable:</text>
+                  <linkedControls>
+                    <control id="chkLegalBillable"/>
+                  </linkedControls>
+              </label>
+            <controlContainer type="short">
+              <linkedControls>
+                <control id="chkLegalBillable"/>
+              </linkedControls>
+            </controlContainer>
+              <label id="label_chkContrBillable" type="long">
+                  <text>Contractor Billable:</text>
+                  <linkedControls>
+                    <control id="chkContrBillable"/>
+                  </linkedControls>
+              </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="chkContrBillable"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+              <label id="label_chkUpdateMap">
+                  <text>Update Map:</text>
+                  <linkedControls>
+                    <control id="chkUpdateMap"/>
+                  </linkedControls>
+              </label>
+            <controlContainer type="short">
+              <linkedControls>
+                <control id="chkUpdateMap"/>
+              </linkedControls>
+            </controlContainer>
+              <label id="label_chkCancel" type="long">
+                  <text>Cancel Work Order:</text>
+                  <linkedControls>
+                    <control id="chkCancel"/>
+                  </linkedControls>
+              </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="chkCancel"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtCancelledBy">
+              <text>Cancelled By:</text>
+              <linkedControls>
+                <control id="txtCancelledBy"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtCancelledBy"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_calDateCancelled">
+              <text>Date:</text>
+              <linkedControls>
+                <control id="calDateCancelled"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="calDateCancelled"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtCancelReason">
+              <text>Cancel Reason:</text>
+              <linkedControls>
+                <control id="txtCancelReason"/>
+              </linkedControls>
+            </label>
+            <controlContainer type="long">
+              <linkedControls>
+                <control id="txtCancelReason"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtUnitsAccomplished">
+              <text>Units Accomp.:</text>
+              <linkedControls>
+                <control id="txtUnitsAccomplished"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtUnitsAccomplished"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboUnitsAccompDesc">
+              <text>Description:</text>
+              <linkedControls>
+                <control id="cboUnitsAccompDesc"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboUnitsAccompDesc"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtUnitsAccompDesc">
+              <text>Description:</text>
+              <linkedControls>
+                <control id="txtUnitsAccompDesc"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtUnitsAccompDesc" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+            <label id="label_chkUnitsAccompDescLock">
+              <text>Lock Units Desc.:</text>
+              <linkedControls>
+                <control id="chkUnitsAccompDescLock"/>
+              </linkedControls>
+            </label>
+            <controlContainer type="short">
+              <linkedControls>
+                <control id="chkUnitsAccompDescLock"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_lblWOLaborCost">
+              <text>Labor Cost:</text>
+              <linkedControls>
+                <control id="lblWOLaborCost"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="lblWOLaborCost"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_lblWOMatCost">
+              <text>Material Cost:</text>
+              <linkedControls>
+                <control id="lblWOMatCost"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="lblWOMatCost"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_lblWOEquipCost">
+              <text>Equipment Cost:</text>
+              <linkedControls>
+                <control id="lblWOEquipCost"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="lblWOEquipCost"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_lblWOPermitCost">
+              <text>Permit Cost:</text>
+              <linkedControls>
+                <control id="lblWOPermitCost"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="lblWOPermitCost"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_lblWOCost">
+              <text>Total WO Cost:</text>
+              <linkedControls>
+                <control id="lblWOCost"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="lblWOCost"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+      </column>
+      <column id="col2">
+        <panel id="Map" width="482px" float="left">
+          <panelTitle>
+            <text>Location Information</text>
+          </panelTitle>
+          <row>
+            <label id="label_txtWOAddress">
+              <text>WO Address:</text>
+              <linkedControls>
+                <control id="txtWOAddress"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtWOAddress"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtLocation">
+              <text>Location Details:</text>
+              <linkedControls>
+                <control id="txtLocation"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtLocation"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+            <label id="label_cboShop">
+              <text>Shop:</text>
+              <linkedControls>
+                <control id="cboShop"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboShop"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtMapPage">
+              <text>Map Page:</text>
+              <linkedControls>
+                <control id="txtMapPage"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtMapPage"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row visible="false">
+            <label id="label_txtTileNo">
+              <text>Tile Number:</text>
+              <linkedControls>
+                <control id="txtTileNo"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtTileNo"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_cboDistrict">
+              <text>District:</text>
+              <linkedControls>
+                <control id="cboDistrict"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboDistrict"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtWOXCoordinate">
+              <text>X Location:</text>
+              <linkedControls>
+                <control id="txtWOXCoordinate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtWOXCoordinate"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtWOYCoordinate">
+              <text>Y Location:</text>
+              <linkedControls>
+                <control id="txtWOYCoordinate"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtWOYCoordinate"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="Assets" width="482px">
+          <panelTitle>
+            <text>Assets</text>
+          </panelTitle>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%">
+              <linkedControls>
+                <control id="grdWoEntity"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer>
+              <linkedControls>
+                <control id="plcLegend"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer style="white-space:nowrap;" cssClass="field buttonField">
+              <linkedControls>
+                <control id="btnHighlight"/>
+                <control id="btnEditAssets"/>
+                <control id="btnAddAsset"/>
+                <control id="btnGetFromMap"/>
+                <control id="btnRemoveAssets"/>
+                <control id="btnListEntityHistory"/>
+                <control id="btnCreateInsp"/>
+                <control id="btnAssetCosts"/>
+                <control id="btnCreateChangeOut"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="SavedTasks" width="482px" float="left">
+          <panelTitle>
+            <text>Tasks</text>
+          </panelTitle>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%">
+              <linkedControls>
+                <control id="grdWOTask"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="LineItems" width="482px" float="left">
+          <panelTitle>
+            <text>Line Items</text>
+          </panelTitle>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%">
+              <linkedControls>
+                <control id="grdContractLineItems"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="WOCycle" width="482px">
+          <panelTitle>
+            <text>Work Cycle</text>
+          </panelTitle>
+          <row>
+            <label id="label_cboCycleType">
+              <text>Repeat</text>
+              <linkedControls>
+                <control id="cboCycleType"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboCycleType"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtCycleIntervalNum">
+              <text>Interval</text>
+              <linkedControls>
+                <control id="txtCycleIntervalNum"/>
+                <control id="cboCycleIntervalUnit"/>
+              </linkedControls>
+            </label>
+            <controlContainer style="white-space:nowrap;">
+              <linkedControls>
+                <control id="txtCycleIntervalNum"/>
+                <control id="cboCycleIntervalUnit"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_cboCycleFrom">
+              <text>From</text>
+              <linkedControls>
+                <control id="cboCycleFrom"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboCycleFrom"/>
+              </linkedControls>
+            </controlContainer>
+            <controlContainer>
+              <linkedControls>
+                <control id="calFromDate"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_txtDatePrinted">
+              <text>Date Printed:</text>
+              <linkedControls>
+                <control id="txtDatePrinted"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtDatePrinted"/>
+              </linkedControls>
+            </controlContainer>
+            <label id="label_txtDateToBePrinted">
+              <text>Next Print Date:</text>
+              <linkedControls>
+                <control id="txtDateToBePrinted"/>
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtDateToBePrinted"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="WorkActivities" width="482px">
+          <panelTitle>
+            <text>Related Work Activities</text>
+          </panelTitle>
+          <title id="title_WorkActivitiesServiceRequests">
+            <text>Service Requests</text>
+          </title>
+          <row>
+            <label id="label_txtRequestId">
+              <linkedControls>
+                <control id="txtRequestId"/>
+              </linkedControls>
+              <text>Add:</text>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtRequestId"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%" style="border-top:solid 1px #bbb; margin-top:4px;">
+              <linkedControls>
+                <control id="grdRequests"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer>
+              <linkedControls>
+                <control id="btnRemoveRequest"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <title id="title_WorkActivitiesInspections">
+            <text>Inspections</text>
+          </title>
+          <row>
+            <label id="label_txtInspectionId">
+              <linkedControls>
+                <control id="txtInspectionId"/>
+              </linkedControls>
+              <text>Add:</text>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="txtInspectionId"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%" style="border-top:solid 1px #bbb; margin-top:4px;">
+              <linkedControls>
+                <control id="grdInspections"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer>
+              <linkedControls>
+                <control id="btnRemoveInsp"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <title id="title_WorkActivitiesWorkOrders">
+            <text>Work Orders</text>
+          </title>
+          <row>
+            <label id="label_txtSourceWOId">
+              <text>Parent:</text>
+              <linkedControls>
+                <control id="txtSourceWOId"/>
+              </linkedControls>
+            </label>
+            <controlContainer style="padding-top:4px;">
+              <linkedControls>
+                <control id="txtSourceWOId"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboChildWODesc"/>
+                <control id="btnCreateChildWO"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%" style="border-top:solid 1px #bbb; margin-top:4px;">
+              <linkedControls>
+                <control id="grdChildWorkOrders"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <title id="title_WorkActivitiesPermits">
+            <text>Permits</text>
+            <linkedControls>
+              <control id="cboCaseTypes"/>
+              <control id="btnCreateCase"/>
+              <control id="grdCases"/>
+            </linkedControls>
+          </title>
+          <row>
+            <controlContainer>
+              <linkedControls>
+                <control id="cboCaseTypes"/>
+                <control id="btnCreateCase"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%" style="border-top:solid 1px #bbb; margin-top:4px;">
+              <linkedControls>
+                <control id="grdCases"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="AttachmentsPanel" width="482px">
+          <panelTitle>
+            <text>Attachments</text>
+          </panelTitle>
+          <row>
+            <controlContainer cssClass="noSpace" width="100%">
+              <linkedControls>
+                <control id="grdAttachments"/>
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+        <panel id="UniversalCustomFieldsPanel" width="482px" float="left">
+          <panelTitle>
+            <text>Universal Custom Fields</text>
+          </panelTitle>
+          <row>
+            <label id="label_Text1">
+              <text>Text1:</text>
+              <linkedControls>
+                <control id="Text1" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text1" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Text2">
+              <text>Text2:</text>
+              <linkedControls>
+                <control id="Text2" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text2" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Text3">
+              <text>Text3:</text>
+              <linkedControls>
+                <control id="Text3" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text3" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Text4">
+              <text>Text4:</text>
+              <linkedControls>
+                <control id="Text4" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text4" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Text5">
+              <text>Text5:</text>
+              <linkedControls>
+                <control id="Text5" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text5" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Text6">
+              <text>Text6:</text>
+              <linkedControls>
+                <control id="Text6" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text6" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Text7">
+              <text>Text7:</text>
+              <linkedControls>
+                <control id="Text7" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text7" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Text8">
+              <text>Text8:</text>
+              <linkedControls>
+                <control id="Text8" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text8" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Text9">
+              <text>Text9:</text>
+              <linkedControls>
+                <control id="Text9" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text9" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Text10">
+              <text>Text10:</text>
+              <linkedControls>
+                <control id="Text10" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Text10" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Date1">
+              <text>Date1:</text>
+              <linkedControls>
+                <control id="Date1" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Date1" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Date2">
+              <text>Date2:</text>
+              <linkedControls>
+                <control id="Date2" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Date2" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Date3">
+              <text>Date3:</text>
+              <linkedControls>
+                <control id="Date3" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Date3" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Date4">
+              <text>Date4:</text>
+              <linkedControls>
+                <control id="Date4" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Date4" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Date5">
+              <text>Date5:</text>
+              <linkedControls>
+                <control id="Date5" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Date5" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Num1">
+              <text>Num1:</text>
+              <linkedControls>
+                <control id="Num1" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Num1" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Num2">
+              <text>Num2:</text>
+              <linkedControls>
+                <control id="Num2" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Num2" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Num3">
+              <text>Num3:</text>
+              <linkedControls>
+                <control id="Num3" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Num3" />
+              </linkedControls>
+            </controlContainer>
+            <label id="label_Num4">
+              <text>Num4:</text>
+              <linkedControls>
+                <control id="Num4" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Num4" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+          <row>
+            <label id="label_Num5">
+              <text>Num5:</text>
+              <linkedControls>
+                <control id="Num5" />
+              </linkedControls>
+            </label>
+            <controlContainer>
+              <linkedControls>
+                <control id="Num5" />
+              </linkedControls>
+            </controlContainer>
+          </row>
+        </panel>
+      </column>
+    </zone>
+  </layout>
+  <shortcuts/>
+  <messages>
+    <message id="DeleteWOTitle" inClientLibrary="true">
+      <value>Delete work order</value>
+    </message>
+    <message id="DeleteWOText" inClientLibrary="true">
+      <value>You are about to delete a work order. Are you sure you want to do this?</value>
+    </message>
+    <message id="CompleteRequiredFields" inClientLibrary="true">
+      <value>Complete all required fields first.</value>
+    </message>
+    <message id="InvalidProjectedFinishDate" inClientLibrary="true">
+      <value>Projected finish date cannot be before projected start date.</value>
+    </message>
+    <message id="InvalidActualFinishDate" inClientLibrary="true">
+      <value>Actual finish date cannot be before actual start date.</value>
+    </message>
+    <message id="NotFound" inClientLibrary="true">
+      <value>not found!</value>
+    </message>
+    <message id="Processing" inClientLibrary="true">
+      <value>Processing...</value>
+    </message>
+    <message id="SelectAssets" inClientLibrary="true">
+      <value>Please select one or more assets.</value>
+    </message>
+    <message id="InvalidAssets" inClientLibrary="true">
+      <value>Invalid asset(s).</value>
+    </message>
+    <message id="AssetSaveSuccess" inClientLibrary="true">
+      <value>Successfully added asset(s).</value>
+    </message>
+    <message id="AssetSaveError" inClientLibrary="true">
+      <value>Error adding asset(s).</value>
+    </message>
+    <message id="ErrorCreatingChildWorkOrder">
+      <value>Error creating child work order.</value>
+    </message>
+    <message id="ErrorNoParent">
+      <value>No current parent work order.</value>
+    </message>
+    <message id="ErrorInspectionAttached">
+      <value>Error attaching inspection. It is already attached.</value>
+    </message>
+
+    <message id="cmdSaveWO">
+      <value>Save</value>
+    </message>
+    <message id="cmdSaveWOToolTip">
+      <value>Save this work order(s).</value>
+    </message>
+    <message id="cmdClose">
+      <value>Close</value>
+    </message>
+    <message id="cmdCloseToolTip">
+      <value>Close this work order(s).</value>
+    </message>
+    <message id="cmdDelete">
+      <value>Delete</value>
+    </message>
+    <message id="cmdDeleteToolTip">
+      <value>Delete this work order(s).</value>
+    </message>
+    <message id="btnGeocodeToolTip">
+      <value>Geocode this work order's address</value>
+    </message>
+    <message id="btnListHistoryToolTip">
+      <value>View work history located near this Work Order.</value>
+    </message>
+    <message id="IdColumn">
+      <value>Id</value>
+    </message>
+    <message id="InspTemplateNameColumn">
+      <value>Template</value>
+    </message>
+    <message id="EntityUidColumn">
+      <value>Entity Id</value>
+    </message>
+    <message id="EntityTypeColumn">
+      <value>Entity Type</value>
+    </message>
+    <message id="TemplateColumn">
+      <value>Template</value>
+    </message>
+    <message id="LegendPinkDesc">
+      <value> - Pink rows indicate inventory still under warranty.</value>
+    </message>
+    <message id="ErrorCantRemoveStandardInspection">
+      <value>Cannot Remove a Standard Inspection.</value>
+    </message>
+
+    <message id="CannotChangeEntityTypeWithTemplateClasses">
+      <value>The entity type of work orders created on entities configured to use template classes cannot be changed.</value>
+    </message>
+    <message id="CannotChangeToEntityTypeWithTemplateClasses">
+      <value>Cannot change the entity type to an entity type configured to use template classes.</value>
+    </message>
+
+    <message id="CreateCycleWOPromptTitle" inClientLibrary="true">
+      <value>Create Cyclical Work Order</value>
+    </message>
+    <message id="CreateCycleWOPrompt" inClientLibrary="true">
+      <value>Would you like to create the next work order in the cycle?</value>
+    </message>
+    <message id="ChangeOutIdColumn">
+        <value>Id</value>
+    </message>
+    <message id="WorkOrderClosed">
+        <value>Work order successfully closed.</value>
+    </message>
+    <message id="WorkOrdersClosed">
+      <value>{0} work orders successfully closed.</value>
+    </message>
+
+
+    <message id="ErrorClosingWorkOrder">
+      <value>This work order cannot be closed.</value>
+    </message>
+    <message id="ErrorClosingWorkOrders">
+      <value>{0} work order(s) cannot be closed.</value>
+    </message>
+    <message id="FixAndReclose">
+      <value>Please do the following and try closing again:</value>
+    </message>
+    <message id="OtherErrors">
+      <value>Enter required data on the other selected work orders.</value>
+    </message>
+
+
+
+
+  </messages>
+</webLayoutBase>

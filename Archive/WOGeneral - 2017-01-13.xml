@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webLayout xmlns="http://www.azteca.com/cityworks/layout/webLayout">
+	<controls>
+		<control id="cboStage" visible="false"/>
+		<control id="txtSubmitToOpenBy" visible="false"></control>
+		<control id="txtDateSubmitToOpen" visible="false"></control>
+		<control id="cboProjectName" visible="false"></control>
+		<control id="ProjectNameTree" visible="false"></control>
+		<control id="cboPrimaryContract" visible="false"></control>
+		<control id="cboContractorName" visible="false"></control>
+		<control id="chkLegalBillable" visible="false"></control>
+		<control id="chkContrBillable" visible="false"></control>
+		<control id="chkUnitsAccompDescLock" visible="false"></control>
+		<control id="txtMapPage" visible="false"></control>
+		<control id="txtTileNo" visible="false"></control>
+		<control id="cboDistrict" visible="false"></control>
+		<control id="cboCaseTypes" visible="false"/>
+		<button id="btnCreateCase" visible="false"/>
+		<control id="Text2" visible="true"></control>
+		<control id="Text1" visible="true"></control>
+                <control required="true" id="Text3" visible="true"></control>
+		<control required="false" id="Text4" visible="true"></control>
+	</controls>
+	<layout>
+
+		<panel id ="CustomJavaScriptPanel" moveBefore="General" type="plain">
+			<row type="plain">
+				<label id="CustomJavaScriptRow" type="plain">
+					<text>
+						<![CDATA[ 		  
+								<script>
+											var strBtnCreateChildWO="#ctl00_Main_btnCreateChildWO";
+											var strOldOnCreateChildWO = "";
+								
+											var strBtnIDDelete ="#ctl00_Toolbar_cmdDelete";
+											var strOldOnClickDelete = "";
+											
+											var strBtnIDSave ="#ctl00_Toolbar_cmdSaveWO";
+          									var strOldOnClickSave = "";		
+													
+														$(strBtnCreateChildWO).ready(function(){
+														// get the old onclick text
+											strOldOnCreateChildWO = $(strBtnCreateChildWO).attr("onclick");
+											
+														// replace the onclick even with my own function
+														$(strBtnCreateChildWO).attr("onclick","AddChild();");
+												});												
+													
+													
+													$(strBtnIDDelete).ready(function(){
+														// get the old onclick text
+											strOldOnClickDelete = $(strBtnIDDelete).attr("onclick");
+											
+														// replace the onclick even with my own function
+														$(strBtnIDDelete).attr("onclick","Validation();");
+												});			
+											
+											
+											
+													$(strBtnIDSave).ready(function(){
+														// get the old onclick text
+											strOldOnClickSave = $(strBtnIDSave).attr("onclick");			
+										
+													 // replace the onclick even with my own function
+														$(strBtnIDSave).attr("onclick","PreProcess();");	
+														});	
+										
+								function AddChild()
+								{
+								var JDEStatusLabel=$("#ctl00_Main_label_Text2").next();
+								var selectdata=$(JDEStatusLabel).find('select');
+								selectdata.removeAttr('disabled');
+
+									$("#ctl00_Main_txtAcctNum").children().removeAttr('disabled');
+									$("#ctl00_Main_txtAcctNum").removeAttr('disabled');	
+									$("#ctl00_Main_txtAcctNum_Input").removeAttr('disabled');
+									$("#ctl00_Main_txtAcctNum_Arrow").removeAttr('disabled');							
+									//$("#ctl00_Main_txtAcctNum_DropDown").find("div").children("ul").css("visibility", "hidden");
+
+									$("#ctl00_Main_cboWODesc").removeAttr('disabled');
+									$("#ctl00_Main_cboCategory").removeAttr('disabled');
+
+								var btnCWbehaviour = $("<button></button>");
+									$(btnCWbehaviour).attr("onclick",strOldOnCreateChildWO);
+									$(btnCWbehaviour).click();
+								}									
+										
+										
+								function PreProcess()
+								{
+								var JDEStatusLabel=$("#ctl00_Main_label_Text2").next();
+								var selectdata=$(JDEStatusLabel).find('select');
+								selectdata.removeAttr('disabled');
+
+									$("#ctl00_Main_txtAcctNum").children().removeAttr('disabled');
+									$("#ctl00_Main_txtAcctNum").removeAttr('disabled');	
+									$("#ctl00_Main_txtAcctNum_Input").removeAttr('disabled');
+									$("#ctl00_Main_txtAcctNum_Arrow").removeAttr('disabled');							
+									//$("#ctl00_Main_txtAcctNum_DropDown").find("div").children("ul").css("visibility", "hidden");
+
+									$("#ctl00_Main_cboWODesc").removeAttr('disabled');
+									$("#ctl00_Main_cboCategory").removeAttr('disabled');
+
+
+
+
+								var btnCWbehaviour = $("<button></button>");
+									$(btnCWbehaviour).attr("onclick",strOldOnClickSave);
+									$(btnCWbehaviour).click();
+								}
+
+										
+								function Validation()
+								{
+									var btnCWbehaviour = $("<button></button>");
+									var procced=true; 
+									
+
+									var JDEStatusLabel=$("#ctl00_Main_label_Text2").next();
+									$($(JDEStatusLabel).find('select')).children("option").each(function() 
+										 {  
+										 var optionValue=this;
+											 if($(optionValue).attr('selected')=='selected')
+											 {
+												if($(optionValue).attr('value')=='SUCCESS' 
+												|| $(optionValue).attr('value')=='PROCESSING' 
+												|| $(optionValue).attr('value')=="QUEUED"
+												|| $(optionValue).attr('value')==""
+												|| $(optionValue).attr('value')=="RESUBMIT"
+												)
+												 {
+												 procced=false;
+												 }
+															
+											 } 
+										 });
+
+								if(procced)  
+									{
+									$(btnCWbehaviour).attr("onclick",strOldOnClickDelete);
+									$(btnCWbehaviour).click();
+									}else
+									{
+								//jAlert('You cannot delete workorder.', 'Warning');	
+								alert("Work Order already exists or is being created in JDE; unable to delete.");
+									}
+								}			
+									
+								function RequieredValidation(data)
+								{
+									$(data).children("option").each(function() 
+										 {  
+										 var optionValue=this;
+											 if($(optionValue).attr('selected')=='selected')
+											 {
+												if($(optionValue).attr('value')=='FAILED')
+												{
+												$("#ctl00_Main_label_Text2").addClass('unflaggedRequired');
+												}											
+											 } 
+										 });
+								}
+
+									
+															$( document ).ready(function(){
+
+												var JDEStatusLabel=$("#ctl00_Main_label_Text2").next();
+												$("#ctl00_Main_label_Text2").css('color', 'black');
+												var selectdata=$(JDEStatusLabel).find('select');
+												
+											
+										$(selectdata).change(function() {
+												$("#ctl00_Main_label_Text2").removeClass('unflaggedRequired');
+												RequieredValidation(this);
+										});
+
+										
+											var SelectedStatus="";
+											
+											$($(JDEStatusLabel).find('select')).children("option").each(function() 
+													 {  
+													 var optionValue=this;
+														 if($(optionValue).attr('selected')=='selected')
+														 {
+															if($(optionValue).attr('value')=='FAILED')
+															{
+															$("#ctl00_Main_label_Text2").addClass('unflaggedRequired');
+															}
+
+															if($(optionValue).attr('value')=='SUCCESS' || $(optionValue).attr('value')=='PROCESSING'|| $(optionValue).attr('value')=='RESUBMIT'|| $(optionValue).attr('value')=='QUEUED'|| $(optionValue).attr('value')=='' )
+															 {
+															 selectdata.attr('disabled', 'disabled');
+																				
+																$("#ctl00_Main_txtAcctNum").children().attr('disabled','disabled');
+																$("#ctl00_Main_txtAcctNum").attr('disabled', 'disabled');	
+																$("#ctl00_Main_txtAcctNum_Input").attr('disabled', 'disabled');
+																$("#ctl00_Main_txtAcctNum_Arrow").attr('disabled', 'disabled');							
+																$("#ctl00_Main_txtAcctNum_DropDown").find("div").children("ul").css("visibility", "hidden");
+																
+																$("#ctl00_Main_cboWODesc").attr('disabled', 'disabled');
+																$("#ctl00_Main_cboCategory").attr('disabled', 'disabled');
+															}
+															
+															//--------PROCESSING
+															if($(optionValue).attr('value')=='RESUBMIT' || $(optionValue).attr('value')=='FAILED')
+															{
+																SelectedStatus=$(optionValue).attr('value');
+															}
+															
+														 } 
+													 });	
+
+								///disable status
+								if (SelectedStatus=='RESUBMIT' || SelectedStatus=='FAILED')
+								{
+									$($(JDEStatusLabel).find('select')).children("option").each(function() 
+													 {  
+													 var optionValue=$(this);
+													 if($(optionValue).attr('value')=='PROCESSING' || $(optionValue).attr('value')=='SUCCESS' || $(optionValue).attr('value')=='QUEUED'|| $(optionValue).attr('value')=='')
+															{
+															
+															optionValue.attr('disabled', 'disabled');
+															}				   
+													 });
+								}
+
+												   
+
+											});
+											  
+														</script>
+						]]>
+					</text>
+				</label>
+			</row>
+		</panel>
+
+		<!-- Add/Update Labels -->
+		<label id="label_cboWorkOrderId">
+			<text>WO Number:</text>
+		</label>
+		<label id="label_cboCategory">
+			<text>JDE Type:</text>
+		</label>
+
+		<!-- Hide/Move Panels and Titles -->
+		<title id="title_WorkActivitiesPermits" visible="false" />
+
+		<!-- Add/Update Rows -->
+		<panel id="General">
+			<row moveTo="9">
+				<label id="label_cboShop">
+					<text>Supplying Dept:</text>
+					<linkedControls>
+						<control id="cboShop"/>
+					</linkedControls>
+				</label>
+				<controlContainer>
+					<linkedControls>
+						<control id="cboShop"/>
+					</linkedControls>
+				</controlContainer>
+				<label id="label_Text1">
+					<text>Receiving Dept:</text>
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+				</label>
+				<controlContainer>
+					<linkedControls>
+						<control id="Text1"/>
+					</linkedControls>
+				</controlContainer>
+			</row>
+			<row moveTo="10">
+				<label id="label_txtAcctNum">
+					<text>Supplying BU:</text>
+					<linkedControls>
+						<control id="txtAcctNum"/>
+					</linkedControls>
+				</label>
+				<controlContainer>
+					<linkedControls>
+						<control id="txtAcctNum"/>
+					</linkedControls>
+				</controlContainer>
+				<label id="label_Text2">
+					<text>JDE Status:</text>
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+				</label>
+				<controlContainer>
+					<linkedControls>
+						<control id="Text2"/>
+					</linkedControls>
+       				</controlContainer>
+			</row>
+		</panel>
+                                <label id="label_Text3">
+					<text>GIS Update?:</text>
+					<linkedControls>
+						<control id="Text3"/>
+					</linkedControls>
+		                </label>
+				<label id="label_Text4">
+					<text>ROW Coord Only</text>
+					<linkedControls>
+						<control id="Text4"/>
+					</linkedControls>
+		                </label>
+	</layout>
+</webLayout>
